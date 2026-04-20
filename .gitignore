@@ -1,0 +1,42 @@
+# Rust
+/target/
+**/*.rs.bk
+Cargo.lock.bak
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.so
+dist/
+build/
+wheels/
+
+# maturin
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Working notes not meant to ship
+docs/superpowers/
+
+# Large artifacts
+*.nc
+*.h5
+*.hdf5
+posterior_*.npz
