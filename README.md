@@ -20,6 +20,14 @@ against.
 | `bateman-core` | compartment graph, release kernels, dosing schedules, adaptive ODE solver, mass-balance diagnostics |
 | `bateman-pd` | exposure integrators (AUC, Cmax, Cavg, time above threshold) and response functions (Hill, Emax, linear), composed through `PdLink` |
 
+## Install
+
+```toml
+[dependencies]
+bateman-core = "0.1"
+bateman-pd = "0.1"
+```
+
 ## Example
 
 ```rust
