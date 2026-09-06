@@ -1,0 +1,22 @@
+[workspace]
+resolver = "3"
+members = ["crates/bateman-core", "crates/bateman-pd"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85.1"
+license = "Apache-2.0"
+repository = "https://github.com/alejandro-soto-franco/bateman"
+homepage = "https://github.com/alejandro-soto-franco/bateman"
+authors = ["Alejandro Soto Franco <sotofranco.eng@gmail.com>"]
+keywords = ["pharmacokinetics", "pkpd", "compartmental", "ode", "prodrug"]
+categories = ["science", "simulation"]
+
+[workspace.dependencies]
+bateman-core = { version = "0.1.0", path = "crates/bateman-core" }
+ode_solvers = "0.6.2"
+thiserror = "2.0"
+
+[profile.release]
+lto = "thin"

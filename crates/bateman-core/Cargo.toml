@@ -1,0 +1,17 @@
+[package]
+name = "bateman-core"
+description = "Compartmental pharmacokinetic modelling for orally dosed, site-of-release-controlled prodrugs: compartment graph, release kernels, dosing schedules, and an adaptive ODE solver with mass-balance diagnostics."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+authors.workspace = true
+keywords.workspace = true
+categories.workspace = true
+readme = "README.md"
+
+[dependencies]
+ode_solvers.workspace = true
+thiserror.workspace = true

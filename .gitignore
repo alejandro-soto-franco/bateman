@@ -32,8 +32,6 @@ wheels/
 .DS_Store
 Thumbs.db
 
-# Working notes not meant to ship
-docs/superpowers/
 
 # Large artifacts
 *.nc
