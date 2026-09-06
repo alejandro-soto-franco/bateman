@@ -1,4 +1,4 @@
-//! Newtypes for the quantities the model carries.
+//! Newtypes for the quantities the model uses.
 //!
 //! Every rate in this crate is per hour and every time is in hours. Mixing
 //! seconds and hours is the classic silent error in a compartmental model, so

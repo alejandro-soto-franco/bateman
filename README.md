@@ -66,7 +66,7 @@ let effect = PdLink::new(Auc, Hill { emax: 1.0, ec50: 20.0, n: 2.0 })
 
 ## Fitting parameters
 
-A graph carries a default value on every edge, and every edge also has a
+A graph has a default value on every edge, and every edge also has a
 canonical name, so a subset of values can be varied without rebuilding the
 topology:
 

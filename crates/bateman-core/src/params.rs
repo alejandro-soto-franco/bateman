@@ -1,6 +1,6 @@
 //! Named parameter overrides applied to a graph at solve time.
 //!
-//! A [`crate::graph::CompartmentGraph`] carries a default value on every edge, so a graph
+//! A [`crate::graph::CompartmentGraph`] has a default value on every edge, so a graph
 //! alone is enough to simulate. Fitting needs to vary a subset of those values
 //! without rebuilding the topology, so every edge also has a canonical name and
 //! [`ModelParameters`] maps a name to a replacement value.
