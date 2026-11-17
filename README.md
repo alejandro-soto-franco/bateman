@@ -61,21 +61,20 @@ let effect = PdLink::new(Auc, Hill { emax: 1.0, ec50: 20.0, n: 2.0 })
 ## Conventions
 
 - Every rate is per hour and every time is in hours. The unit is fixed at the
-  type level, so seconds and hours cannot be mixed by accident.
+  type level. Seconds and hours cannot be mixed by accident.
 - The state vector is in nanomoles. Concentrations are derived at output time by
   dividing by a compartment volume.
 - Release is one for one in molar terms: one nanomole of prodrug becomes one
   nanomole of product.
 - Nothing leaves the state vector. Faecal loss and systemic elimination both
-  move material into terminal compartments, which is what makes the
-  mass-balance report a check on the integration rather than an accounting
-  identity. A solve whose relative error exceeds the tolerance fails rather
-  than returning a quietly wrong trajectory.
+  move material into terminal compartments. The mass-balance report is therefore a check on the
+  integration and not an accounting identity. A solve whose relative error
+  exceeds the tolerance fails and returns no trajectory.
 
 ## Fitting parameters
 
 A graph has a default value on every edge, and every edge also has a
-canonical name, so a subset of values can be varied without rebuilding the
+canonical name. A subset of values can be varied without rebuilding the
 topology:
 
 | Edge | Name |
@@ -86,14 +85,15 @@ topology:
 | release kernel | `kernel:{compartment}:{field}` |
 
 `CompartmentGraph::parameter_names` lists every name a graph accepts. A name the
-graph does not accept is rejected before the solve runs, so a misspelt parameter
+graph does not accept is rejected before the solve runs. A misspelt parameter
 cannot silently leave the model on its defaults.
 
 ## Status
 
-Implemented and tested: the compartment graph and its validation, the three
-release kernels, dosing schedules, the deterministic solver with mass-balance
-diagnostics, named parameter overrides, and the exposure and response layer.
+Implemented and tested: the compartment graph with its validation, and the three
+release kernels. The deterministic solver reports mass-balance diagnostics.
+Dosing schedules, named parameter overrides, and the exposure and response layer
+are also covered.
 Correctness is checked against closed forms: single-compartment exponential
 decay and the two-step Bateman cascade, both to 1e-6.
 
